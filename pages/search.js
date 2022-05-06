@@ -14,7 +14,7 @@ const Search = ({ properties }) => {
   const router = useRouter();
 
   return (
-    <Box m='auto'>
+    <Box maxWidth='1280px' m='auto'>
       <Flex
         onClick={() => setSearchFilters(!searchFilters)}
         cursor='pointer'
