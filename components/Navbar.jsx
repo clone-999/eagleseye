@@ -33,11 +33,17 @@ import {
 import { BsFillCameraVideoFill, BsSearch } from "react-icons/bs";
 import { FcMenu, FcHome, FcAbout } from 'react-icons/fc';
 import { FiKey } from 'react-icons/fi';
+import { useRouter } from 'next/router';
 
 
 const Navbar = () => {
   const bg = useColorModeValue("white", "gray.800");
   const mobileNav = useDisclosure();
+  const router = useRouter();
+
+  const goSearch = (locate) => {
+    router.push(locate);
+  }
 
   return (
     <Box shadow="md">
@@ -159,16 +165,16 @@ const Navbar = () => {
       >
         <Tabs defaultIndex={1} borderBottomColor="transparent">
           <TabList>
-            <Tab py={4} m={0} _focus={{ boxShadow: "none" }}>
+            <Tab py={4} m={0} _focus={{ boxShadow: "none" }} onClick={(e) => goSearch('/')}>
               HOME
             </Tab>
-            <Tab py={4} m={0} _focus={{ boxShadow: "none" }}>
+            <Tab py={4} m={0} _focus={{ boxShadow: "none" }} onClick={(e) => goSearch('/search')}>
               SEARCH
             </Tab>
-            <Tab py={4} m={0} _focus={{ boxShadow: "none" }}>
+            <Tab py={4} m={0} _focus={{ boxShadow: "none" }} onClick={(e) => goSearch('/search?purpose=for-sale')}>
               BUY PROPERTY
             </Tab>
-            <Tab py={4} m={0} _focus={{ boxShadow: "none" }}>
+            <Tab py={4} m={0} _focus={{ boxShadow: "none" }} onClick={(e) => goSearch('/search?purpose=for-rent')}>
               RENT PROPERTY
             </Tab>{" "}
             <Tab isDisabled py={4} m={0}>
