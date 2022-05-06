@@ -35,7 +35,7 @@ import {
               </Text>
             </Center>
             <Stack direction={'row'}>
-              <SearchFilters />
+              <SearchFilters page={'/search'} />
               
             </Stack>
           </Stack>

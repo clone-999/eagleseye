@@ -8,7 +8,7 @@ import { filterData, getFilterValues } from '../utils/filterData';
 import { baseUrl, fetchApi } from '../utils/fetchApi';
 import noresult from '../assets/images/noresult.svg';
 
-export default function SearchFilters() {
+export default function SearchFilters({ page }) {
   const [filters] = useState(filterData);
   const [searchTerm, setSearchTerm] = useState('');
   const [locationData, setLocationData] = useState();
@@ -28,7 +28,11 @@ export default function SearchFilters() {
       }
     })
 
-    router.push({ pathname: path, query: query });
+    if (page === '/search') {
+        router.push({ pathname: page, query: query });
+    } else{
+        router.push({ pathname: path, query: query });
+    }
   };
 
   useEffect(() => {
