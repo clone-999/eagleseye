@@ -12,9 +12,6 @@ import {
   VStack,
   IconButton,
   CloseButton,
-  InputGroup,
-  InputLeftElement,
-  Input,
   Avatar,
   Tabs,
   TabList,
@@ -27,13 +24,15 @@ import {
   AiOutlineMenu,
   AiFillHome,
   AiOutlineInbox,
-  AiOutlineSearch,
   AiFillBell,
 } from "react-icons/ai";
 import { BsFillCameraVideoFill, BsSearch } from "react-icons/bs";
 import { FcMenu, FcHome, FcAbout } from 'react-icons/fc';
 import { FiKey } from 'react-icons/fi';
 import { useRouter } from 'next/router';
+import Image from 'next/image';
+import logo1 from '../assets/images/logo.png';
+import avatar1 from '../assets/images/avatar.png';
 
 
 const Navbar = () => {
@@ -109,14 +108,14 @@ const Navbar = () => {
             </Box>
             <chakra.a
               href="/"
-              title="Choc Home Page"
+              title="Home Page"
               display="flex"
               alignItems="center"
             >
-              <Logo />
-              <VisuallyHidden>Choc</VisuallyHidden>
+              <Image src={logo1} width={80} height={80} />
+              <VisuallyHidden>Dave</VisuallyHidden>
             </chakra.a>
-            <chakra.h1 fontSize="xl">EaglesEye</chakra.h1>
+            
           </HStack>
           <HStack spacing={3} display="flex" alignItems="center">
             <HStack spacing={3} display={{ base: "none", md: "inline-flex" }}>
@@ -150,8 +149,8 @@ const Navbar = () => {
 
             <Avatar
               size="sm"
-              name="Dan Abrahmov"
-              src="https://bit.ly/dan-abramov"
+              name="User Photo"
+              src={ avatar1 }
             />
           </HStack>
         </Flex>
