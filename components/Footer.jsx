@@ -6,11 +6,16 @@ import {
   SimpleGrid,
   Text,
   Link,
+  Button,
   VisuallyHidden,
   chakra,
   useColorModeValue,
 } from '@chakra-ui/react';
 import { FaTwitter, FaYoutube, FaInstagram } from 'react-icons/fa';
+import {
+  AiOutlineInbox,
+  AiFillPhone,
+} from "react-icons/ai";
 
 
 
@@ -59,9 +64,7 @@ export default function Footer() {
           <Stack align={'flex-start'}>
             <ListHeader>Company</ListHeader>
             <Link href={'#'}>About Us</Link>
-            <Link href={'#'}>Blog</Link>
-            <Link href={'#'}>Careers</Link>
-            <Link href={'#'}>Contact Us</Link>
+            <Link href='/contactus'>Contact Us</Link>
           </Stack>
 
           <Stack align={'flex-start'}>
@@ -80,8 +83,21 @@ export default function Footer() {
           </Stack>
 
           <Stack align={'flex-start'}>
-            <ListHeader>Install App</ListHeader>
-            
+            <ListHeader>Conttact Us</ListHeader>
+              <Button
+                variant="solid"
+                leftIcon={<AiOutlineInbox />}
+                size="sm"
+              >
+                support@mobilies.io
+              </Button>
+              <Button
+                variant="solid"
+                leftIcon={<AiFillPhone />}
+                size="sm"
+              >
+                +971-54-204-3611
+              </Button>
           </Stack>
         </SimpleGrid>
       </Container>

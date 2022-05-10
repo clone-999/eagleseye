@@ -25,6 +25,7 @@ import {
   AiFillHome,
   AiOutlineInbox,
   AiFillBell,
+  AiFillPhone,
 } from "react-icons/ai";
 import { BsFillCameraVideoFill, BsSearch } from "react-icons/bs";
 import { FcMenu, FcHome, FcAbout } from 'react-icons/fc';
@@ -119,15 +120,22 @@ const Navbar = () => {
           </HStack>
           <HStack spacing={3} display="flex" alignItems="center">
             <HStack spacing={3} display={{ base: "none", md: "inline-flex" }}>
-              <Button variant="ghost" leftIcon={<AiFillHome />} size="sm">
-                Dashboard
-              </Button>
               <Button
                 variant="solid"
                 leftIcon={<AiOutlineInbox />}
                 size="sm"
               >
-                Inbox
+                support@mobilies.io
+              </Button>
+              <Button
+                variant="solid"
+                leftIcon={<AiFillPhone />}
+                size="sm"
+              >
+                +971-54-204-3611
+              </Button>
+              <Button variant="ghost" leftIcon={<AiFillHome />} size="sm">
+                Dashboard
               </Button>
               <Button
                 variant="ghost"
@@ -162,7 +170,7 @@ const Navbar = () => {
         borderWidth={0}
         overflowX="auto"
       >
-        <Tabs defaultIndex={1} borderBottomColor="transparent">
+        <Tabs defaultIndex={0} borderBottomColor="transparent">
           <TabList>
             <Tab py={4} m={0} _focus={{ boxShadow: "none" }} onClick={(e) => goSearch('/')}>
               HOME
@@ -176,6 +184,9 @@ const Navbar = () => {
             <Tab py={4} m={0} _focus={{ boxShadow: "none" }} onClick={(e) => goSearch('/search?purpose=for-rent')}>
               RENT PROPERTY
             </Tab>{" "}
+            <Tab py={4} m={0} _focus={{ boxShadow: "none" }} onClick={(e) => goSearch('/contactus')}>
+              CONTACT US
+            </Tab>
             <Tab isDisabled py={4} m={0}>
               ADVANCED
             </Tab>
